@@ -3,7 +3,7 @@ const script = document.createElement("script");
 
 // 実行したいファイルを設定する
 script.setAttribute("type", "module");
-script.setAttribute("src", chrome.extension.getURL("main.js"));
+script.setAttribute("src", chrome.runtime.getURL("main.js"));
 
 // サイトの `<head />` を取得する
 const head =

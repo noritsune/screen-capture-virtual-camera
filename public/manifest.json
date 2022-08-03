@@ -1,18 +1,20 @@
 {
   "name": "Screen Capture Virtual Camera 🎥",
-  "version": "0.0.1",
-  "minimum_chrome_version": "10.0",
+  "version": "1.0.0",
+  "minimum_chrome_version": "88.0",
   "icons": {},
   "description": "画面キャプチャを描画するための仮想カメラを提供します 🎥",
   "content_scripts": [
     {
-      "matches": ["http://localhost:*/*", "https://meet.google.com/*"],
+      "matches": ["https://meet.google.com/*"],
       "js": ["index.js"],
       "run_at": "document_start",
       "all_frames": true
     }
   ],
-  "permissions": ["tabs", "<all_urls>"],
-  "manifest_version": 2,
-  "web_accessible_resources": ["main.js"]
+  "manifest_version": 3,
+  "web_accessible_resources": [{
+    "resources": ["main.js"],
+    "matches": ["<all_urls>"]
+  }]
 }
